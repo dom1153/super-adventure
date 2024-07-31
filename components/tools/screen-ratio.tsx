@@ -1,12 +1,6 @@
 "use client"
 
-import React, {
-  FormEvent,
-  useCallback,
-  useEffect,
-  useMemo,
-  useState,
-} from "react"
+import React, { useCallback, useEffect, useState } from "react"
 import { all, create } from "mathjs"
 
 import { ReadonlyInput } from "../myui/myinput"
@@ -15,7 +9,6 @@ import {
   Card,
   CardContent,
   CardDescription,
-  CardFooter,
   CardHeader,
   CardTitle,
 } from "../ui/card"

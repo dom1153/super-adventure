@@ -1,10 +1,9 @@
 "use client"
 
-import { useCallback, useEffect, useState } from "react"
+import { useCallback, useEffect, useMemo, useState } from "react"
 import { Copy, Dices } from "lucide-react"
 import { CopyToClipboard } from "react-copy-to-clipboard"
 import toast, { Toaster } from "react-hot-toast"
-import { FaCopy } from "react-icons/fa"
 import { adjectives, uniqueNamesGenerator } from "unique-names-generator"
 
 import { Button } from "../ui/button"
@@ -19,7 +18,7 @@ import {
 interface UniqueNameGenProps {}
 
 const UniqueNameGen: React.FC<UniqueNameGenProps> = ({}) => {
-  const [uniqueName, setUniqueName] = useState(randomizeName())
+  const [uniqueName, setUniqueName] = useState("")
 
   function randomizeName() {
     const name = uniqueNamesGenerator({
@@ -34,9 +33,10 @@ const UniqueNameGen: React.FC<UniqueNameGenProps> = ({}) => {
     setUniqueName(randomizeName())
   }, [])
 
-  //   useEffect(() => {
-  //     setUniqueName(randomizeName())
-  //   }, [uniqueName])
+  // empty dep array means this only runs after component mounts!
+  useEffect(() => {
+    setUniqueName(randomizeName())
+  }, [])
 
   return (
     <>
@@ -58,7 +58,7 @@ const UniqueNameGen: React.FC<UniqueNameGenProps> = ({}) => {
               >
                 <p className="flex cursor-pointer">
                   <span className="font-bold text-green-500">{uniqueName}</span>
-                  <Copy class="my-auto ml-2 size-4" />
+                  <Copy className="my-auto ml-2 size-4" />
                 </p>
               </CopyToClipboard>
             </div>

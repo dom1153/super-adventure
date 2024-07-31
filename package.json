@@ -10,12 +10,14 @@
     "lint:fix": "next lint --fix",
     "preview": "next build && next start",
     "typecheck": "tsc --noEmit",
+    "analyze": "ANALYZE=true npm run build",
     "format:write": "prettier --write \"**/*.{ts,tsx,mdx}\" --cache",
     "format:check": "prettier --check \"**/*.{ts,tsx,mdx}\" --cache"
   },
   "dependencies": {
     "@azurapi/azurapi": "^1.1.2",
     "@melloware/react-logviewer": "^5.1.1",
+    "@next/bundle-analyzer": "^14.2.5",
     "@radix-ui/react-label": "^2.1.0",
     "@radix-ui/react-scroll-area": "^1.1.0",
     "@radix-ui/react-separator": "^1.1.0",
