@@ -8,6 +8,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import AzurApiTest from "@/components/other/azurapi-test"
 import LogViewTest from "@/components/other/logview-test"
 import TerminalUiTest from "@/components/other/terminal-ui-test"
+import UniqueNameGen from "@/components/other/unique-name-test"
 import ScreenRatioTool from "@/components/tools/screen-ratio"
 
 // const client = new AzurAPI();
@@ -28,6 +29,9 @@ export default async function IndexPage() {
         <Tabs defaultValue="screen-ratio" className="">
           <TabsList>
             <TabsTrigger value="screen-ratio">Screen Ratio</TabsTrigger>
+            <TabsTrigger value="unique-name-generator">
+              Unique Name Generator
+            </TabsTrigger>
             <TabsTrigger value="terminal-ui">Terminal UI</TabsTrigger>
             <TabsTrigger value="log-view">Log View</TabsTrigger>
             <TabsTrigger value="fs-test">fs</TabsTrigger>
@@ -35,6 +39,9 @@ export default async function IndexPage() {
           </TabsList>
           <TabsContent value="terminal-ui">
             <TerminalUiTest />
+          </TabsContent>
+          <TabsContent value="unique-name-generator">
+            <UniqueNameGen />
           </TabsContent>
           <TabsContent value="log-view">
             <LogViewTest />

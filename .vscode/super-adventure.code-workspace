@@ -36,13 +36,16 @@
 			"app/": true,
 			"styles/": true,
 			"components/": true,
-			"scripts/": true
+			"scripts/": false
 		},
 		// "editor.codeActionsOnSave": {
 		// 	// "source.fixAll": true
 		// },
 		// "eslint.validate": ["javasscript", "javascriptreact", "typescript", "typescriptreact"],
 		"eslint.lintTask.enable": true,
-		"eslint.lintTask.options": "."
+		"eslint.lintTask.options": ".",
+		"[typescriptreact]": {
+    	    "editor.defaultFormatter": "esbenp.prettier-vscode"
+    	}
 	},
 }

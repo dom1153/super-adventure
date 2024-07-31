@@ -1,6 +1,12 @@
 "use client"
 
-import React, { FormEvent, useEffect, useState } from "react"
+import React, {
+  FormEvent,
+  useCallback,
+  useEffect,
+  useMemo,
+  useState,
+} from "react"
 import { all, create } from "mathjs"
 
 import { ReadonlyInput } from "../myui/myinput"
@@ -51,7 +57,7 @@ const ScreenRatioTool: React.FC<ScreenRatioToolProps> = ({}) => {
     return math.format(value, { fraction: "ratio" })
   }
 
-  function doCalcuate() {
+  const doCalcuate = useCallback(() => {
     // console.log("doCalculate")
     try {
       const width = parseInt(pWidth)
@@ -66,7 +72,7 @@ const ScreenRatioTool: React.FC<ScreenRatioToolProps> = ({}) => {
       console.log(error)
       setErrorText(`Error: ${error.message}`)
     }
-  }
+  }, [pWidth, pHeight, math])
 
   useEffect(() => {
     doCalcuate()

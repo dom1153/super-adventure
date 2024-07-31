@@ -3,4 +3,4 @@ cd "$(dirname $0)"
 cd ..
 
 npm i
-npm run dev
+npm run lint -- --fix && npm run build
