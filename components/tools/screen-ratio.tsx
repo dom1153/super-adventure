@@ -62,7 +62,7 @@ const ScreenRatioTool: React.FC<ScreenRatioToolProps> = ({}) => {
       setRWidth(ratio.n)
       setRHeight(ratio.d)
       setErrorText("")
-    } catch (error) {
+    } catch (error: any) {
       console.log(error)
       setErrorText(`Error: ${error.message}`)
     }
@@ -92,7 +92,7 @@ const ScreenRatioTool: React.FC<ScreenRatioToolProps> = ({}) => {
                     id="pWidth"
                     placeholder="2560"
                     value={pWidth}
-                    onInput={(e) => {
+                    onInput={(e: any) => {
                       setPWidth(e.target.value)
                     }}
                   />
@@ -104,7 +104,7 @@ const ScreenRatioTool: React.FC<ScreenRatioToolProps> = ({}) => {
                     id="pHeight"
                     placeholder="1440"
                     value={pHeight}
-                    onInput={(e) => {
+                    onInput={(e: any) => {
                       setPHeight(e.target.value)
                     }}
                   />
@@ -139,8 +139,8 @@ const ScreenRatioTool: React.FC<ScreenRatioToolProps> = ({}) => {
                       size={"sm"}
                       className="text-sm cursor-pointer"
                       onClick={() => {
-                        setPWidth(tag.w)
-                        setPHeight(tag.h)
+                        setPWidth(tag.w.toString())
+                        setPHeight(tag.h.toString())
                       }}
                     >
                       {tag.w} x {tag.h} {tag.label ? `(${tag?.label})` : ""}

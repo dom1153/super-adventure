@@ -2,7 +2,7 @@ import { NextResponse } from "next/server"
 import { AzurAPI } from "@azurapi/azurapi"
 import { Ship } from "@azurapi/azurapi/build/types/ship"
 
-export async function POST(request: NextResponse) {
+export async function POST() {
   // TODO: api doesn't work the first time the server is started?
   // Try a global ('warms up' the api... or something)
   const client = new AzurAPI()
@@ -11,7 +11,7 @@ export async function POST(request: NextResponse) {
   // for some reason the first time this api returns null objects...
   let err = !client.ships.id(`001`)
 
-  let ships = []
+  let ships : any[] = []
   if (!err) {
     // ships = ids.map((i) => {
     //   let ship = client.ships.id(i) as Ship

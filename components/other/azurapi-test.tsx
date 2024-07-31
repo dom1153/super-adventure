@@ -1,11 +1,11 @@
 "use client"
 
+import React, { useCallback, useState } from "react"
+import Image from "next/image"
+import Link from "next/link"
 import { Ship } from "@azurapi/azurapi/build/types/ship"
 import axios from "axios"
-import Link from "next/link"
-import React, { useCallback, useState } from "react"
 
-import Image from "next/image"
 import { Button } from "../ui/button"
 import {
   Card,
@@ -24,7 +24,7 @@ import {
 const AzurApiTest = ({}) => {
   const [counter, setCounter] = useState(1)
   const [textLog, setTextLog] = useState("azurapi-test.tsx\n")
-  const [shipList, setShipList] = useState([])
+  const [shipList, setShipList] = useState([] as Ship[])
 
   const log = (s: string) => {
     setTextLog(textLog.concat(`${s}\n`))
