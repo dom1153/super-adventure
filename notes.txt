@@ -2,3 +2,4 @@ run task: eslint: lint whole folder
 
 npm run lint
 npm run build
+npm run lint -- --fix

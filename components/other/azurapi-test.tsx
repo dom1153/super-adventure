@@ -51,8 +51,8 @@ const AzurApiTest = ({}) => {
 
   return (
     <>
-      <Card className="flex flex-col gap-5 bg-zinc-900 p-5 rounded-sm">
-        <div className="flex gap-5 items-center">
+      <Card className="flex flex-col gap-5 rounded-sm bg-zinc-900 p-5">
+        <div className="flex items-center gap-5">
           <Button onClick={buttonHandler}>Call API</Button>
           <p>AzurApiTest</p>
         </div>

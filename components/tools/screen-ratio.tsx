@@ -70,7 +70,7 @@ const ScreenRatioTool: React.FC<ScreenRatioToolProps> = ({}) => {
 
   useEffect(() => {
     doCalcuate()
-  }, [pWidth, pHeight, errorText])
+  }, [pWidth, pHeight, errorText, doCalcuate])
 
   return (
     <>
@@ -137,7 +137,7 @@ const ScreenRatioTool: React.FC<ScreenRatioToolProps> = ({}) => {
                   <div key={`${tag.h}x${tag.w}`}>
                     <Button
                       size={"sm"}
-                      className="text-sm cursor-pointer"
+                      className="cursor-pointer text-sm"
                       onClick={() => {
                         setPWidth(tag.w.toString())
                         setPHeight(tag.h.toString())
