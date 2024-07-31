@@ -1,12 +1,11 @@
 "use client"
 
-import React, { useCallback, useState } from "react"
-import Link from "next/link"
-import { AzurAPI } from "@azurapi/azurapi"
 import { Ship } from "@azurapi/azurapi/build/types/ship"
-import { LazyLog, ScrollFollow } from "@melloware/react-logviewer"
 import axios from "axios"
+import Link from "next/link"
+import React, { useCallback, useState } from "react"
 
+import Image from "next/image"
 import { Button } from "../ui/button"
 import {
   Card,
@@ -48,7 +47,7 @@ const AzurApiTest = ({}) => {
     } catch (error) {
       console.log(error)
     }
-  }, [textLog, shipList])
+  }, [])
 
   return (
     <>
@@ -79,7 +78,7 @@ const AzurApiTest = ({}) => {
                       <Link href={ship.wikiUrl} target="_blank">
                         <Card key={ship.id} className="w-40">
                           <CardContent className="relative p-0">
-                            <img
+                            <Image
                               src={ship.thumbnail}
                               alt="Default"
                               className=""

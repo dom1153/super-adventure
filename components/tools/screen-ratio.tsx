@@ -77,7 +77,7 @@ const ScreenRatioTool: React.FC<ScreenRatioToolProps> = ({}) => {
       <Card>
         <CardHeader>
           <CardTitle>Screen ratio calculation</CardTitle>
-          <CardDescription>Get ratio'd</CardDescription>
+          <CardDescription>Get ratio&apos;d</CardDescription>
         </CardHeader>
         <CardContent>
           {/* TODO: ScrollList with common ratios */}

@@ -38,5 +38,11 @@
 			"components/": true,
 			"scripts/": true
 		},
-	}
+		// "editor.codeActionsOnSave": {
+		// 	// "source.fixAll": true
+		// },
+		// "eslint.validate": ["javasscript", "javascriptreact", "typescript", "typescriptreact"],
+		"eslint.lintTask.enable": true,
+		"eslint.lintTask.options": "."
+	},
 }

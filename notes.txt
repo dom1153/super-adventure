@@ -1,1 +1,1 @@
-foo
+run task: eslint: lint whole folder
