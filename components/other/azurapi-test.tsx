@@ -17,6 +17,7 @@ import {
   TooltipTrigger,
 } from "../ui/tooltip"
 
+// @refresh reset
 const AzurApiTest = ({}) => {
   const [shipList, setShipList] = useState([] as Ship[])
 
@@ -116,7 +117,7 @@ const AzurApiTest = ({}) => {
 
   return (
     <Card className="flex flex-col gap-5 p-5">
-      {isDevEnv && (
+      {
         <div className="flex items-center gap-5">
           <Button onClick={azurApiCall}>
             <RotateCw className="mr-2 size-4" /> Reload
@@ -127,7 +128,7 @@ const AzurApiTest = ({}) => {
 
           <p>Ship Count: {shipList.length}</p>
         </div>
-      )}
+      }
 
       {/* this solution works, but does not fill the card size */}
       {/* based on AL wiki showing ship drops from event... */}
@@ -142,6 +143,7 @@ const AzurApiTest = ({}) => {
               return genShipCard(ship)
             })
           : Array.from(Array(10).keys()).map((i) => {
+              if (!isDevEnv) return null
               return <DummyCard i={i} key={`card-${i}`} />
             })}
       </div>
