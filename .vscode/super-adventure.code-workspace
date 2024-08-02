@@ -44,6 +44,9 @@
 		// "eslint.validate": ["javasscript", "javascriptreact", "typescript", "typescriptreact"],
 		"eslint.lintTask.enable": true,
 		"eslint.lintTask.options": ".",
+		"[typescript]": {
+			"editor.defaultFormatter": "esbenp.prettier-vscode"
+		},
 		"[typescriptreact]": {
     	    "editor.defaultFormatter": "esbenp.prettier-vscode"
     	}

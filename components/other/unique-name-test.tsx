@@ -1,6 +1,6 @@
 "use client"
 
-import { useCallback, useEffect, useMemo, useState } from "react"
+import { useCallback, useEffect, useState } from "react"
 import { Copy, Dices } from "lucide-react"
 import { CopyToClipboard } from "react-copy-to-clipboard"
 import toast, { Toaster } from "react-hot-toast"
