@@ -28,7 +28,7 @@ const AzurApiTest = ({}) => {
   const azurApiCall = useCallback(async () => {
     try {
       await axios
-        .post("/api/azur/test", {})
+        .get("/api/azur/test", {})
         .then((res) => {
           const ships: Ship[] = res.data.list
           setShipList(ships)

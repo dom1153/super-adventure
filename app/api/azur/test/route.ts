@@ -4,7 +4,7 @@ import { Ship } from "@azurapi/azurapi/build/types/ship"
 import azurapi, { checkUpdate } from "@/lib/azurapi"
 import { isDevEnv } from "@/lib/myutils"
 
-export async function POST() {
+export async function GET() {
   if (isDevEnv) await checkUpdate()
 
   let ships: any[] = []
