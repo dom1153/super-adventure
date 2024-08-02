@@ -30,7 +30,7 @@ export default async function IndexPage() {
       value: "unique-name-generator",
       component: <UniqueNameGen />,
       displayName: "Unique Name Generator",
-      default: true,
+      // default: true,
     },
     {
       value: "screen-ratio",
@@ -53,8 +53,7 @@ export default async function IndexPage() {
       value: "azur-api",
       component: <AzurApiTest />,
       displayName: "Azur API Test",
-      disabled: false,
-      default: true,
+      disabled: true,
     },
     {
       value: "fs-test",

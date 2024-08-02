@@ -49,7 +49,7 @@ const AzurApiTest = ({}) => {
 
   const DummyCard = (i: any) => {
     return (
-      <div key={`card-${i}`} className="">
+      <div className="">
         <Card className="w-40">
           <div className="flex justify-center py-1">
             <p>{`🅱️enterprise`}</p>
@@ -115,39 +115,37 @@ const AzurApiTest = ({}) => {
   }
 
   return (
-    <>
-      <Card className="flex flex-col gap-5 rounded-sm bg-blue-950 p-5">
-        {isDevEnv && (
-          <div className="flex items-center gap-5">
-            <Button onClick={azurApiCall}>
-              <RotateCw className="mr-2 size-4" /> Reload
-            </Button>
-            <Button onClick={resetList}>
-              <Ban className="mr-2 size-4" /> Reset
-            </Button>
+    <Card className="flex flex-col gap-5 p-5">
+      {isDevEnv && (
+        <div className="flex items-center gap-5">
+          <Button onClick={azurApiCall}>
+            <RotateCw className="mr-2 size-4" /> Reload
+          </Button>
+          <Button onClick={resetList}>
+            <Ban className="mr-2 size-4" /> Reset
+          </Button>
 
-            <p>Ship Count: {shipList.length}</p>
-          </div>
-        )}
-
-        {/* TODO: can't really have dynamic gaps AND auto wrapping grid without some js... */}
-        {/* Padding(X), gap, and flex-grow to psuedo *dynamic* gap spacing */}
-        {/* <div
-          className="grid"
-          style={{ gridTemplateColumns: "repeat(auto-fill, 100px)" }}
-        ></div> */}
-        <div className="flex flex-wrap justify-center gap-5">
-          {shipList.length > 0
-            ? shipList.map((ship: Ship) => {
-                return genShipCard(ship)
-              })
-            : Array.from(Array(10).keys()).map((i) => {
-                return <DummyCard i={i} />
-              })}
-          {/* <p style={{ flex: "auto" }} content=""></p> */}
+          <p>Ship Count: {shipList.length}</p>
         </div>
-      </Card>
-    </>
+      )}
+
+      {/* this solution works, but does not fill the card size */}
+      {/* based on AL wiki showing ship drops from event... */}
+      <div
+        className="grid justify-evenly gap-y-5"
+        style={{
+          gridTemplateColumns: "repeat(auto-fill, 162px)",
+        }}
+      >
+        {shipList.length > 0
+          ? shipList.map((ship: Ship) => {
+              return genShipCard(ship)
+            })
+          : Array.from(Array(10).keys()).map((i) => {
+              return <DummyCard i={i} key={`card-${i}`} />
+            })}
+      </div>
+    </Card>
   )
 }
 

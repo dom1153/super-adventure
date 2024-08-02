@@ -8,6 +8,10 @@ export const siteConfig = {
       title: "Home",
       href: "/",
     },
+    {
+      title: "Azur-Api-Test",
+      href: "/azur-api",
+    },
   ],
   links: {
     // twitter: "https://twitter.com/shadcn",
