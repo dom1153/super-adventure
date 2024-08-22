@@ -10,7 +10,9 @@
 			"extensions": [
 				"bradlc.vscode-tailwindcss",
 				"dsznajder.es7-react-js-snippets",
-				"esbenp.prettier-vscode"
+				"esbenp.prettier-vscode",
+				"assisrMatheus.sidebar-markdown-notes",
+				"alefragnani.Bookmarks"
 			]
 		}
 	}
