@@ -1,0 +1,4 @@
+### UV commands
+uv init .
+uv add beautifulsoup4 requests
+uv python install ### uv python list
