@@ -6,6 +6,7 @@ import { siteConfig } from "@/config/site"
 import { buttonVariants } from "@/components/ui/button"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import AzurApiTest from "@/components/other/azurapi-test"
+import Foobar from "@/components/other/foobar"
 import LogViewTest from "@/components/other/logview-test"
 import TerminalUiTest from "@/components/other/terminal-ui-test"
 import UniqueNameGen from "@/components/other/unique-name-test"
@@ -66,6 +67,13 @@ export default async function IndexPage() {
         </>
       ),
       displayName: "FileSys Read Test",
+      disabled: true,
+    },
+    {
+      value: "foobar",
+      component: <Foobar />,
+      displayName: "Foobar",
+      // default: true,
       disabled: true,
     },
   ]
