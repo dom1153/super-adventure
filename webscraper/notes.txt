@@ -2,3 +2,5 @@
 uv init .
 uv add beautifulsoup4 requests
 uv python install ### uv python list
+
+DATABASE_URL="mongodb+srv://USERNAMEmongodb:XXXXXXXXX@clusterXXXX.XXXXXXX.mongodb.net/TABLE_NAME
