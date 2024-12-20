@@ -16,10 +16,6 @@ export const siteConfig = {
       title: "AL Shop Tool",
       href: "/azur-shop-tool",
     },
-    {
-      title: "AL Ship Cards",
-      href: "/azur-ship-cards",
-    },
   ],
   links: {
     github: "https://github.com/dom1153/super-adventure",

@@ -23,6 +23,7 @@ const AzurApiTest = ({}) => {
 
   useEffect(() => {
     azurApiCall()
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
   const azurApiCall = useCallback(async () => {

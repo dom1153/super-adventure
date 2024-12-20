@@ -36,7 +36,7 @@ function ListOfLinks({ items }: { items?: NavItem[] }) {
 function NavCard() {
   return (
     <Card className="p-8">
-      <h2 className="text-xl mb-4">Links:</h2>
+      <h2 className="mb-4 text-xl">Links:</h2>
       <ListOfLinks items={siteConfig.mainNav} />
     </Card>
   )
