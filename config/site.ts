@@ -2,20 +2,26 @@ export type SiteConfig = typeof siteConfig
 
 export const siteConfig = {
   name: "Super-Adventure",
-  description: "Just demoing stuff",
+  description: "A collection of tools and experiments",
   mainNav: [
     {
-      title: "Home",
-      href: "/",
+      title: "Unique Name Generator",
+      href: "/unique-name-generator",
     },
     {
-      title: "Azur-Api-Test",
-      href: "/azur-api",
+      title: "Screen Ratio Calculator",
+      href: "/screen-ratio-calculator",
+    },
+    {
+      title: "AL Shop Tool",
+      href: "/azur-shop-tool",
+    },
+    {
+      title: "AL Ship Cards",
+      href: "/azur-ship-cards",
     },
   ],
   links: {
-    // twitter: "https://twitter.com/shadcn",
-    github: "https://github.com/dom1153",
-    docs: "https://github.com/dom1153",
+    github: "https://github.com/dom1153/super-adventure",
   },
 }

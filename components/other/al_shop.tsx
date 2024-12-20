@@ -35,22 +35,25 @@ const ALShop: React.FC = () => {
     fetchEvents()
   }, [])
 
-  const id = 7
+  const ID = 7
 
   return (
-    <div>
-      <h1>Event Shops</h1>
+    <>
+      <h1 className="text-3xl font-extrabold leading-tight tracking-tighter md:text-4xl">
+        Event Shops
+      </h1>
+
       {events.length > 0 && (
         <div>
-          <h2>Event: {events[id].url}</h2>
-          {events[id].dates.all_server && (
+          <h2>Event: {events[ID].url}</h2>
+          {events[ID].dates.all_server && (
             <p>
-              Period: {events[id].dates.all_server.start} -{" "}
-              {events[id].dates.all_server.end}
+              Period: {events[ID].dates.all_server.start} -{" "}
+              {events[ID].dates.all_server.end}
             </p>
           )}
           <div className="grid grid-cols-4 gap-4">
-            {events[id].shop_items.map((item, itemIndex) => (
+            {events[ID].shop_items.map((item, itemIndex) => (
               <div key={itemIndex} className="border p-4">
                 <img src={item.image_url} alt={item.name} />
                 <h3>{item.name}</h3>
@@ -61,6 +64,8 @@ const ALShop: React.FC = () => {
           </div>
         </div>
       )}
+
+      {/* unsure what this was */}
       {false &&
         events.map((event, index) => (
           <div key={index}>
@@ -83,7 +88,7 @@ const ALShop: React.FC = () => {
             </div>
           </div>
         ))}
-    </div>
+    </>
   )
 }
 
