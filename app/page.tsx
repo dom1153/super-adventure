@@ -5,6 +5,7 @@ import Link from "next/link"
 import { siteConfig } from "@/config/site"
 import { buttonVariants } from "@/components/ui/button"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
+import ALShop from "@/components/other/al_shop"
 import AzurApiTest from "@/components/other/azurapi-test"
 import Foobar from "@/components/other/foobar"
 import LogViewTest from "@/components/other/logview-test"
@@ -75,6 +76,12 @@ export default async function IndexPage() {
       displayName: "Foobar",
       // default: true,
       disabled: true,
+    },
+    {
+      value: "al-shop",
+      component: <ALShop />,
+      displayName: "AL Shop",
+      default: true,
     },
   ]
 
