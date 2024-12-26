@@ -3,5 +3,8 @@
   "python.defaultInterpreterPath": "./webscraper/.venv/bin/python",
   "[python]": {
     "editor.defaultFormatter": "ms-python.black-formatter"
+  },
+  "[shellscript]": {
+    "editor.defaultFormatter": "foxundermoon.shell-format"
   }
 }

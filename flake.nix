@@ -3,11 +3,13 @@
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-24.11";
+    nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
   };
 
   outputs = {
     self,
     nixpkgs,
+    nixpkgs-unstable
   }: let
     allSystems = [
       "x86_64-linux" # 64-bit Intel/AMD Linux
@@ -20,14 +22,15 @@
       nixpkgs.lib.genAttrs allSystems (system:
         f {
           pkgs = import nixpkgs {inherit system;};
+          unstablePkgs = import nixpkgs-unstable {inherit system;};
         });
   in {
-    devShells = forAllSystems ({pkgs}: {
+    devShells = forAllSystems ({pkgs, unstablePkgs}: {
       default = pkgs.mkShell {
         packages = with pkgs; [
           nodejs_20
           uv
-          bun
+          unstablePkgs.bun
         ];
       };
     });

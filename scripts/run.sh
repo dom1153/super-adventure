@@ -2,5 +2,10 @@
 cd "$(dirname $0)"
 cd ..
 
-npm i
-npm run dev
+if command -v bun &>/dev/null; then
+    bun i
+    bun run dev
+else
+    npm i
+    npm run dev
+fi
