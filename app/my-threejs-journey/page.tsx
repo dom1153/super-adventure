@@ -1,9 +1,11 @@
-import { getFileContent } from "@/lib/myutils"
-import MTJ3Basic from "@/components/other/mythreejsjouney/MTJ3Basic"
+"use server"
 
-export default function IndexPage() {
+import { getFileContent } from "@/lib/serverutils"
+import MTJ3Basic from "@/components/other/mythreejsjourney/MTJ3Basic"
+
+export default async function IndexPage() {
   const fileContent = getFileContent(
-    "./components/other/mythreejsjouney/snippets"
+    "./components/other/mythreejsjourney/snippets"
   )
 
   return (
