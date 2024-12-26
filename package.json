@@ -41,6 +41,7 @@
     "sharp": "^0.33.5",
     "tailwind-merge": "^1.13.2",
     "tailwindcss-animate": "^1.0.6",
+    "three": "^0.171.0",
     "unique-names-generator": "^4.7.1"
   },
   "devDependencies": {

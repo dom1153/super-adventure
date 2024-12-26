@@ -16,6 +16,10 @@ export const siteConfig = {
       title: "AL Shop Tool",
       href: "/azur-shop-tool",
     },
+    // {
+    //   title: "My Three Journey",
+    //   href: "/my-threejs-journey",
+    // },
   ],
   links: {
     github: "https://github.com/dom1153/super-adventure",
