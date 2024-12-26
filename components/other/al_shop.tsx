@@ -2,6 +2,8 @@
 
 import { useEffect, useState } from "react"
 
+import { Card } from "../ui/card"
+
 interface ShopItem {
   name: string
   stock: string
@@ -17,6 +19,18 @@ interface EventData {
   shop_items: ShopItem[]
   url: string
 }
+
+const LoadingPlaceHolder = () => (
+  <>
+    <img
+      src="https://azurapi.github.io/v2/images/9c2-8536c5e9.gif"
+      className="h-24"
+      id="dancer"
+      alt="Come back!"
+    />
+    <p>Loading...</p>
+  </>
+)
 
 const ALShop: React.FC = () => {
   const [events, setEvents] = useState<EventData[]>([])
@@ -43,9 +57,10 @@ const ALShop: React.FC = () => {
         Event Shops
       </h1>
 
-      {events.length > 0 && (
+      {events.length > 0 ? (
         <div>
-          <h2>Event: {events[ID].url}</h2>
+          <a href={events[ID].url}>{events[ID].url}</a>
+
           {events[ID].dates.all_server && (
             <p>
               Period: {events[ID].dates.all_server.start} -{" "}
@@ -63,6 +78,8 @@ const ALShop: React.FC = () => {
             ))}
           </div>
         </div>
+      ) : (
+        <LoadingPlaceHolder />
       )}
 
       {/* unsure what this was */}

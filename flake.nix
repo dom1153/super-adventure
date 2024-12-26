@@ -2,7 +2,7 @@
   description = "Example JavaScript development environment for Zero to Nix";
 
   inputs = {
-    nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
+    nixpkgs.url = "github:NixOS/nixpkgs/nixos-24.11";
   };
 
   outputs = {
@@ -27,6 +27,7 @@
         packages = with pkgs; [
           nodejs_20
           uv
+          bun
         ];
       };
     });
